@@ -1,0 +1,60 @@
+//BUBBLE SORT
+
+//function
+//	T = O(n^2) | S =(1)
+
+	static void bS(int a[],int n ) {
+		
+		for(int i = 0;i<n-1;i++) {
+			for(int j = 0;j<n-i-1;j++) {
+				if(a[j] > a[j+1]) {
+					int temp = a[j];
+					a[j] = a[j+1];
+					a[j+1] = temp;
+				}
+			}
+		}
+		
+	}
+
+
+
+//OPTIMISED BUBBLE SORT
+
+static void bS(int a[],int n) {
+		
+		boolean isSwap = true;
+		for(int i = 0;i<n-1 && isSwap;i++) {
+			    isSwap = false;
+			for(int j = 0;j<n-i-1;j++) {
+				if(a[j] > a[j+1]) {
+					int temp = a[j];
+					a[j] = a[j+1];
+					a[j+1] = temp;
+					isSwap = true;
+				}
+			}
+		}
+	}
+	
+
+
+
+
+
+//RECURSIVE BUBBLE SORT
+
+//	function
+//	T = O(n^2) | S =(n)
+	
+	static void bS(int a[],int n) {
+		if(n == 1) return;		
+		   for(int j = 0;j<n-1;j++) {
+			   if(a[j] > a[j+1]) {
+				   int temp = a[j];
+				   a[j] = a[j+1];
+				   a[j+1] = temp;
+			   }
+		   }
+		bS(a,n-1);
+	}
